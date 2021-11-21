@@ -472,14 +472,19 @@ public class GroupTreeView extends BorderPane {
         }
     }
 
+ /**
+ * Method will now only show the button as active
+ * Removed inactive setting from add group button, as it was causing the UI issue and
+ * Users can add more than 10 groups.
+ */
     private void setNewGroupButtonStyle(TreeTableView<GroupNodeViewModel> groupTree) {
         PseudoClass active = PseudoClass.getPseudoClass("active");
-        PseudoClass inactive = PseudoClass.getPseudoClass("inactive");
+
 
         if (groupTree.getRoot() != null) {
-            boolean isActive = groupTree.getExpandedItemCount() <= 10;
+            boolean isActive = groupTree.getExpandedItemCount() !=0;
             addNewGroup.pseudoClassStateChanged(active, isActive);
-            addNewGroup.pseudoClassStateChanged(inactive, !isActive);
+
         } else {
             addNewGroup.pseudoClassStateChanged(active, true);
         }

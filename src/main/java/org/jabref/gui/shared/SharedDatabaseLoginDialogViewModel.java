@@ -124,6 +124,7 @@ public class SharedDatabaseLoginDialogViewModel extends AbstractViewModel {
         return openSharedDatabase(connectionProperties);
     }
 
+    //Need to move this to prefrences dialog
     private void setupKeyStore() {
         System.setProperty("javax.net.ssl.trustStore", keystore.getValue());
         System.setProperty("javax.net.ssl.trustStorePassword", keyStorePasswordProperty.getValue());

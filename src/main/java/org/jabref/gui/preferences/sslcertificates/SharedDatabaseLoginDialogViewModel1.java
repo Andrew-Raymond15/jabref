@@ -50,7 +50,7 @@ import de.saxsys.mvvmfx.utils.validation.Validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SharedDatabaseLoginDialogViewModel extends AbstractViewModel {
+public class SharedDatabaseLoginDialogViewModel1 extends AbstractViewModel {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SharedDatabaseLoginDialogViewModel.class);
 
@@ -82,7 +82,7 @@ public class SharedDatabaseLoginDialogViewModel extends AbstractViewModel {
     private final Validator keystoreValidator;
     private final CompositeValidator formValidator;
 
-    public SharedDatabaseLoginDialogViewModel(JabRefFrame frame, DialogService dialogService) {
+    public SharedDatabaseLoginDialogViewModel1(JabRefFrame frame, DialogService dialogService) {
         this.frame = frame;
         this.dialogService = dialogService;
 

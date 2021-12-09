@@ -24,7 +24,7 @@ import com.airhacks.afterburner.views.ViewLoader;
 import com.tobiasdiez.easybind.EasyBind;
 import de.saxsys.mvvmfx.utils.validation.visualization.ControlsFxVisualizer;
 
-public class SharedDatabaseLoginDialogView extends BaseDialog<Void> {
+public class SharedDatabaseLoginDialogView1 extends BaseDialog<Void> {
 
     private final JabRefFrame frame;
 
@@ -50,7 +50,7 @@ public class SharedDatabaseLoginDialogView extends BaseDialog<Void> {
     private SharedDatabaseLoginDialogViewModel viewModel;
     private final ControlsFxVisualizer visualizer = new ControlsFxVisualizer();
 
-    public SharedDatabaseLoginDialogView(JabRefFrame frame) {
+    public SharedDatabaseLoginDialogView1(JabRefFrame frame) {
         this.frame = frame;
         this.setTitle(Localization.lang("Connect to shared database"));
 

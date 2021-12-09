@@ -35,13 +35,13 @@ import org.jabref.model.entry.BibEntry;
 
 import com.google.common.eventbus.Subscribe;
 
-public class SharedDatabaseUIManager {
+public class SharedDatabaseUIManager1 {
 
     private final JabRefFrame jabRefFrame;
     private DatabaseSynchronizer dbmsSynchronizer;
     private final DialogService dialogService;
 
-    public SharedDatabaseUIManager(JabRefFrame jabRefFrame) {
+    public SharedDatabaseUIManager1(JabRefFrame jabRefFrame) {
         this.jabRefFrame = jabRefFrame;
         this.dialogService = jabRefFrame.getDialogService();
     }

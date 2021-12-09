@@ -9,11 +9,11 @@ import com.airhacks.afterburner.injection.Injector;
 /**
  * Opens a shared database.
  */
-public class ConnectToSharedDatabaseCommand extends SimpleCommand {
+public class ConnectToSharedDatabaseCommand1 extends SimpleCommand {
 
     private final JabRefFrame jabRefFrame;
 
-    public ConnectToSharedDatabaseCommand(JabRefFrame jabRefFrame) {
+    public ConnectToSharedDatabaseCommand1(JabRefFrame jabRefFrame) {
         this.jabRefFrame = jabRefFrame;
     }
 

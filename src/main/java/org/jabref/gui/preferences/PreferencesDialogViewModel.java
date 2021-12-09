@@ -46,6 +46,7 @@ import org.jabref.logic.xmp.XmpPreferences;
 import org.jabref.preferences.ExternalApplicationsPreferences;
 import org.jabref.preferences.PreferencesFilter;
 import org.jabref.preferences.PreferencesService;
+import org.jabref.gui.preferences.sslcertificates.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,6 +86,7 @@ public class PreferencesDialogViewModel extends AbstractViewModel {
                 new XmpPrivacyTab(),
                 new NetworkTab(),
                 new AppearanceTab()
+                //new SharedDatabaseLoginDialogView1()
         );
     }
 

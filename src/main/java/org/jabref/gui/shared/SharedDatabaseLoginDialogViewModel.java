@@ -121,7 +121,7 @@ public class SharedDatabaseLoginDialogViewModel extends AbstractViewModel {
                 .createDBMSConnectionProperties();
 
         setupKeyStore();
-        addcertKeyStore();
+        addcerKeyStore();
         return openSharedDatabase(connectionProperties);
     }
 
@@ -133,10 +133,16 @@ public class SharedDatabaseLoginDialogViewModel extends AbstractViewModel {
     }
 
 
-    private void addcertKeyStore(){
+    /**
+    * Added A function to add keystore from .cer file
+    * Users can now browse and add keystore from the options menu.
+    */
+    //cs427
+    private void addcerKeyStore(){
       System.setProperty("javax.net.ssl.trustStore", keystore.getValue());
       System.setProperty("javax.net.ssl.trustStorePassword", keyStorePasswordProperty.getValue());
       System.setProperty("javax.net.debug", "ssl");
+      Localization.lang("Please enter a valid .cer path.");
     }
 
     private boolean openSharedDatabase(DBMSConnectionProperties connectionProperties) {

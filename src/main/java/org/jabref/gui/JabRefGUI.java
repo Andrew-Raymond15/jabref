@@ -163,9 +163,14 @@ public class JabRefGUI {
                     pr.getDatabaseContext().clearDatabasePath(); // do not open the original file
                     pr.getDatabase().clearSharedDatabaseID();
 
-                    LOGGER.error("Connection error", e);
+                    /**
+                    * Updated connection error message
+                    *
+                    */
+                    //cs427
+                    LOGGER.error("Connection error please check SSL connection.", e);
                     mainFrame.getDialogService().showErrorDialogAndWait(
-                            Localization.lang("Connection error"),
+                            Localization.lang("Connection error please check SSL connection."),
                             Localization.lang("A local copy will be opened."),
                             e);
                 }

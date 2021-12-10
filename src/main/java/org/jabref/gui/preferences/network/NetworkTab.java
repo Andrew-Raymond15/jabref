@@ -1,4 +1,5 @@
 package org.jabref.gui.preferences.network;
+import org.jabref.gui.shared.*;
 
 import javafx.application.Platform;
 import javafx.beans.binding.BooleanBinding;
@@ -42,6 +43,10 @@ public class NetworkTab extends AbstractPreferenceTabView<NetworkTabViewModel> i
     @FXML private CustomPasswordField proxyPassword;
     @FXML private Label proxyAttentionLabel;
     @FXML private Button checkConnectionButton;
+
+    @FXML private TextField fileKeystore;
+    @FXML private CustomPasswordField passwordKeystore;
+    @FXML private Button browseKeystore;
 
     private String proxyPasswordText = "";
     private int proxyPasswordCaretPosition = 0;
@@ -94,15 +99,10 @@ public class NetworkTab extends AbstractPreferenceTabView<NetworkTabViewModel> i
         ActionFactory actionFactory = new ActionFactory(Globals.getKeyPrefs());
         actionFactory.configureIconButton(StandardActions.HELP, new HelpAction(HelpFile.REMOTE), remoteHelp);
 
-        validationVisualizer.setDecoration(new IconValidationDecorator());
-        Platform.runLater(() -> {
-            validationVisualizer.initVisualization(viewModel.remotePortValidationStatus(), remotePort);
-            validationVisualizer.initVisualization(viewModel.proxyHostnameValidationStatus(), proxyHostname);
-            validationVisualizer.initVisualization(viewModel.proxyPortValidationStatus(), proxyPort);
-            validationVisualizer.initVisualization(viewModel.proxyUsernameValidationStatus(), proxyUsername);
-            validationVisualizer.initVisualization(viewModel.proxyPasswordValidationStatus(), proxyPassword);
-        });
-    }
+
+
+                // Must be executed after the initialization of the view, otherwise it doesn't work
+        }
 
     private void proxyPasswordReveal(MouseEvent event) {
         proxyPasswordText = proxyPassword.getText();

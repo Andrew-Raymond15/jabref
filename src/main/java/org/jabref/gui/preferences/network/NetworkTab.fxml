@@ -23,7 +23,6 @@
         <TextField fx:id="remotePort" maxWidth="100.0" HBox.hgrow="ALWAYS"/>
         <Button fx:id="remoteHelp" prefWidth="20.0"/>
     </HBox>
-
     <Label styleClass="sectionHeader" text="%Proxy configuration"/>
     <GridPane hgap="10.0" vgap="10.0">
         <columnConstraints>

@@ -52,6 +52,11 @@ public class NetworkTabViewModel implements PreferenceTabViewModel {
     private final ProxyPreferences proxyPreferences;
     private final ProxyPreferences backupProxyPreferences;
 
+    private final StringProperty password = new SimpleStringProperty("");
+    private final StringProperty keystore = new SimpleStringProperty("");
+    private final BooleanProperty useSSL = new SimpleBooleanProperty();
+    private final StringProperty keyStorePasswordProperty = new SimpleStringProperty("");
+
     private final List<String> restartWarning = new ArrayList<>();
 
     public NetworkTabViewModel(DialogService dialogService, PreferencesService preferences) {
@@ -308,5 +313,13 @@ public class NetworkTabViewModel implements PreferenceTabViewModel {
 
     public StringProperty proxyPasswordProperty() {
         return proxyPasswordProperty;
+    }
+
+
+    //Need to move this to prefrences dialog
+    private void setupKeyStore() {
+        System.setProperty("javax.net.ssl.trustStore", keystore.getValue());
+        System.setProperty("javax.net.ssl.trustStorePassword", keyStorePasswordProperty.getValue());
+        System.setProperty("javax.net.debug", "ssl");
     }
 }

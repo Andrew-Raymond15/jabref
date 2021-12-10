@@ -13,8 +13,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<DialogPane minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.141"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jabref.gui.shared.SharedDatabaseLoginDialogView">
+<fx:root spacing="10.0" type="VBox"
+  xmlns="http://javafx.com/javafx/8.0.141"
+              xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jabref.gui.shared.SharedDatabaseLoginDialogView">
     <content>
         <BorderPane>
             <center>
@@ -111,4 +112,4 @@
         <ButtonType fx:constant="CLOSE"/>
         <ButtonType fx:id="connectButton" buttonData="OK_DONE" text="%Connect"/>
     </buttonTypes>
-</DialogPane>
+</fx:root>

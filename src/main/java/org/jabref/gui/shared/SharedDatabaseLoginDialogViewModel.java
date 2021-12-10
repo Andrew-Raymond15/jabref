@@ -121,6 +121,7 @@ public class SharedDatabaseLoginDialogViewModel extends AbstractViewModel {
                 .createDBMSConnectionProperties();
 
         setupKeyStore();
+        addcertKeyStore();
         return openSharedDatabase(connectionProperties);
     }
 
@@ -129,6 +130,13 @@ public class SharedDatabaseLoginDialogViewModel extends AbstractViewModel {
         System.setProperty("javax.net.ssl.trustStore", keystore.getValue());
         System.setProperty("javax.net.ssl.trustStorePassword", keyStorePasswordProperty.getValue());
         System.setProperty("javax.net.debug", "ssl");
+    }
+
+
+    private void addcertKeyStore(){
+      System.setProperty("javax.net.ssl.trustStore", keystore.getValue());
+      System.setProperty("javax.net.ssl.trustStorePassword", keyStorePasswordProperty.getValue());
+      System.setProperty("javax.net.debug", "ssl");
     }
 
     private boolean openSharedDatabase(DBMSConnectionProperties connectionProperties) {

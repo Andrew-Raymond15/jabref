@@ -97,7 +97,9 @@ public class SharedDatabaseLoginDialogView extends BaseDialog<Void> {
 
         useSSL.selectedProperty().bindBidirectional(viewModel.useSSLProperty());
 
+
         fileKeystore.textProperty().bindBidirectional(viewModel.keyStoreProperty());
+
 
         browseKeystore.disableProperty().bind(viewModel.useSSLProperty().not());
         passwordKeystore.disableProperty().bind(viewModel.useSSLProperty().not());

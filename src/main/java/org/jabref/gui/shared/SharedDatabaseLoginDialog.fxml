@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<fx:root spacing="10.0" type="VBox"
+<DialogPane prefHeight="700.0" prefWidth="1100.0" minHeight="400" minWidth="600"
   xmlns="http://javafx.com/javafx/8.0.141"
               xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jabref.gui.shared.SharedDatabaseLoginDialogView">
     <content>
@@ -55,7 +55,7 @@
                                 <Label text="%Password:" GridPane.rowIndex="4"/>
                                 <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.columnSpan="2"
                                                GridPane.rowIndex="4"/>
-                                <CheckBox fx:id="useSSL" mnemonicParsing="false" text="%Use SSL" GridPane.rowIndex="5"/>
+                                <CheckBox fx:id="useSSL" mnemonicParsing="false" text="%Use SSL/Add .cer" GridPane.rowIndex="5"/>
                                 <CheckBox fx:id="rememberPassword" mnemonicParsing="false" text="%Remember Password"
                                           GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5"/>
                                 <Label text="%Keystore:" GridPane.rowIndex="6"/>
@@ -65,9 +65,15 @@
                                         GridPane.rowIndex="6"/>
                                 <Label text="%Keystore password:" GridPane.rowIndex="7"/>
                                 <PasswordField fx:id="passwordKeystore" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-                                <Label text="%Server Timezone:" GridPane.rowIndex="8"/>
+
+                                <Label text="%Add .cert file:" GridPane.rowIndex="9"/>
+                                <TextField fx:id="fileKeystore" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+                                <Button fx:id="browseKeystore" mnemonicParsing="false"
+                                        onAction="#showOpenKeystoreFileDialog" text="%Browse" GridPane.columnIndex="2"
+                                        GridPane.rowIndex="9"/>
+                                <Label text="%Server Timezone:" GridPane.rowIndex="11"/>
                                 <TextField fx:id="serverTimezone" GridPane.columnIndex="1" GridPane.columnSpan="2"
-                                           GridPane.rowIndex="8"/>
+                                           GridPane.rowIndex="11"/>
                                 <GridPane>
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
@@ -112,4 +118,4 @@
         <ButtonType fx:constant="CLOSE"/>
         <ButtonType fx:id="connectButton" buttonData="OK_DONE" text="%Connect"/>
     </buttonTypes>
-</fx:root>
+</DialogPane>
